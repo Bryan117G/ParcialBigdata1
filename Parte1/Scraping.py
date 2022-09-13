@@ -1,9 +1,9 @@
-#Bryan Garavito Juan Jurado
+#Bryan Garavito 
 import json
 import boto3
 import datetime
 
-def lambda_handler(event, context):
+def lambda_handler1():
     #TODO implement
     # Se importa la funcion date time para sacar la fecha y poderla agregar al nombre del archivo txt
     now= datetime.datetime.now()
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     s3= boto3.resource('s3')
     bucket = s3.Bucket('dolarraw01')
 
-    client.put_object(Body=resp.data.decode('utf-8'), Bucket='dolarraw01', Key ='dolar'+ x + '.txt')
+    client.put_object(Body=resp.data.decode('utf-8'), Bucket='dolarraw01', Key ='dolar '+ x + '.txt')
 
     return{
         'statusCode':200,
